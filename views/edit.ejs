@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Blog</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<div class="bg-light" style="min-height: 100vh;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+        <a class="navbar-brand" href="">The Blog</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="index.ejs">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="">About</a>
+                <a class="nav-item nav-link" href="">Account</a>
+                <a class="nav-item nav-link" href="">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mw-100 d-flex justify-content-center p-2" style="border-radius: 20px; overflow: hidden;">
+        <form action="/update" method="POST" id="postForm" class="row mw-75 bg-secondary p-2">
+            <input type="hidden" name="postId" value="<%= postId %>">
+
+            <div class="col-sm-4 form-group">
+                <label for="userName">Name</label>
+                <input class="form-control" type="text" name="userName" value="<%= post.postAuthor %>" required>
+            </div>
+
+            <div class="col-sm-5 form-group">
+                <label for="userTitle">Title</label>
+                <input class="form-control" type="text" name="userTitle" value="<%= post.postTitle %>" required>
+            </div>
+
+            <div class="col-sm-3 form-group d-flex justify-content-center p-4">
+                <button class="btn btn-light form-control" type="submit">Update Post</button>
+            </div>
+
+            <div class="col-sm-12 form-group">
+                <label for="userContent">Edit blog post here:</label>
+                <textarea class="form-control" rows="8" name="userContent" required><%= post.postContent %></textarea>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</div>
+</html>
