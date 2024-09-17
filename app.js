@@ -20,7 +20,7 @@ let today = new Date();
 postList.push(new blogPost(today.toDateString(), "Evan", "First Post", "This is a post."))
 postList.unshift(new blogPost(today.toDateString(), "Aaron", "Second Post", "This is also a post."))
 postList.unshift(new blogPost(today.toDateString(), "Ryan", "What defines a post?", "Conceptually, what really defines a blog post?"))
-postList.unshift(new blogPost(today.toDateString(), "William", "Fourth Post", "Your mom is a blog post."))
+postList.unshift(new blogPost(today.toDateString(), "William", "Fourth Post", "Hello World!"))
 
 app.get("/", (req, res) =>
     {
